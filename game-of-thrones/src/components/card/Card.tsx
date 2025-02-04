@@ -10,7 +10,7 @@ interface Props {
 
 export default function Cards({...Props}: Props) {
     return (
-        <Card className="w-200 h-200 flex flex-col p-4">
+        <Card className="w-200 h-200 flex flex-col p-4 shadow-black">
             <div className="w-100 h-100">
                 <CardTitle>
                     {Props.titulo}
