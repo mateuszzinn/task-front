@@ -1,4 +1,7 @@
 import Image from "next/image";
+import nedStark from "../../../public/ned.jpg"
+import ImagemOtimizada from "@/components/imagens/ImagemOtimizada";
+import conteudo from "../../../public/data/texto.json";
 
 export default function Home() {
   return (
@@ -12,7 +15,13 @@ export default function Home() {
         <h2 className="p-3 text-xl">Tudo sobre Game of Thrones</h2>
         <hr />
         <h3 className="p-3 text-lg">Introdução</h3>
-        <Image src="/ned.jpg" alt="" width={200} height={200} />
+        <Image 
+          src={nedStark} 
+          alt="ned stark" 
+          objectFit="cover"
+          className="transition duration-500 ease-in-out transform hover:scale-110"
+          width={200} 
+          height={200} />
         <p>
           Game of Thrones é uma série de televisão que conta a história de uma
           guerra entre famílias nobres dos Sete Reinos, na terra fictícia de
@@ -44,29 +53,22 @@ export default function Home() {
         </div>
         <hr />
         <div className="p-3">
-          <h3 className="p-3 text-lg">Um breve resumo da história.</h3>
+          <h3 className="p-3 text-lg">{conteudo.resumo}</h3>
           <p>
-            Game of Thrones é uma série de TV que conta a história de uma luta
-            entre as casas Stark e Lannister pelo Trono de Ferro. A trama se passa
-            em Westeros, um lugar onde as estações duram anos e onde o inverno
-            pode durar uma vida inteira.
+            {conteudo.parte1}
           </p>
           <p>
-            A história começa com a ida de Eddard "Ned" Stark para Porto Real,
-            onde se torna conselheiro do Rei Robert Baratheon. Ned descobre que a
-            Casa Lannister, da qual a Rainha Cersei faz parte, pode ter sido
-            responsável pela morte do Mão do Rei anterior.
+          {conteudo.parte2}
           </p>
           <p>
-            A trama se desenvolve em torno de vários conflitos, como a disputa
-            pelo Trono de Ferro, a ameaça dos Caminhantes Brancos e a rivalidade
-            entre as casas Stark e Lannister. Alguns personagens da série são
-            inspirados em pessoas reais. Por exemplo, a rivalidade entre as casas
-            Stark e Lannister foi inspirada na Guerra das Rosas, que ocorreu na
-            Inglaterra no século XV.
+          {conteudo.parte3}
           </p>
         </div>
       </main>
+      <hr />
+      <ImagemOtimizada/>
     </div>
+    
+
   );
 }
