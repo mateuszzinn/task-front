@@ -1,5 +1,5 @@
 import { Button } from "../ui/button";
-import { Card, CardTitle, CardContent, CardHeader, CardDescription, CardFooter } from "../ui/card";
+import { Card, CardTitle, CardContent, CardHeader, CardDescription } from "../ui/card";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
