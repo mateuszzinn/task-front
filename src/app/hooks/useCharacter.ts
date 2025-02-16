@@ -22,7 +22,6 @@ export default function useCharacter() {
     async function fetchCharacter() {
       try {
         setLoading(true);
-        const numero = Math.floor(Math.random() * (30 - 1 + 1)) + 1;
         const response = await fetch(
           `https://thronesapi.com/api/v2/Characters`
         );
