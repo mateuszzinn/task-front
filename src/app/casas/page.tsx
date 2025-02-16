@@ -1,11 +1,20 @@
+
+'use client'
+
 import Cards from "@/components/card/Card";
+import { useState } from "react";
+import { DefaultTheme, ThemeProvider } from "styled-components";
+import { lannisterTheme, noneTheme, starkTheme, targaryenTheme } from "../themes/defaultTheme";
+import { BackgroundTheme } from "./styles";
 
 export default function Casas() {
+    const [theme, setTheme] = useState<DefaultTheme>(noneTheme)
     return (
-        <div className="bg-gray-900">
+        <ThemeProvider theme={theme}>
+        <BackgroundTheme>
             <div className="flex flex-wrap justify-center">
                 <div className="w-1/3 p-4">
-                    <Cards 
+                    <Cards onClick={() => setTheme(starkTheme)}
                         src="/stark.webp" 
                         alt="" 
                         titulo="Stark" 
@@ -13,7 +22,7 @@ export default function Casas() {
                     />
                 </div>
                 <div className="w-1/3 p-4">
-                    <Cards 
+                    <Cards onClick={() => setTheme(lannisterTheme)}
                         src="/Lannister.webp" 
                         alt="" 
                         titulo="Lannister" 
@@ -21,7 +30,7 @@ export default function Casas() {
                     />
                 </div>
                 <div className="w-1/3 p-4">
-                    <Cards 
+                    <Cards onClick={() => setTheme(targaryenTheme)}
                         src="/targaryen.webp" 
                         alt="" 
                         titulo="Targaryen" 
@@ -29,6 +38,8 @@ export default function Casas() {
                     />
                 </div>
             </div> 
-        </div>
+        </BackgroundTheme>
+        
+        </ThemeProvider>
     );
 }
